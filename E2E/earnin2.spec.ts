@@ -5,6 +5,7 @@ test.use({
 });
 
 test('test', async ({ page }) => {
+  await test.setTimeout(120000);
   await page.goto('https://news.sky.com/');
   await page.waitForLoadState('networkidle');
   await page.frameLocator('iframe[title="SP Consent Message"]').getByRole('button', { name: 'Accept all' }).click();

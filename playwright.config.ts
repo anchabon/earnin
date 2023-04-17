@@ -48,10 +48,9 @@ export default defineConfig({
     },
     
     {
-      name: 'Mobile Safari',
+      name: 'safari',
       use: {
-        ...devices['iPhone 13'],
-      },
+        ...devices['iPhone 13'],},
     },
 
     /* Test against mobile viewports. */
