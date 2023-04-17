@@ -13,6 +13,8 @@ test('test', async ({ page }) => {
   await page.getByPlaceholder('Type a city name').fill('manchester');
   await page.getByPlaceholder('Type a city name').press('Enter');
   await page.getByRole('link', { name: 'Manchester, Manchester, United Kingdom' }).click();
+  await page.waitForLoadState();
+//   await expect(page).toHaveScreenshot('weather.png');
   await expect(page).toHaveScreenshot('weather.png',{maxDiffPixelRatio:0.04});
 });
 
