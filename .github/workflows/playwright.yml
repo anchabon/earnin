@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ main, master ]
   schedule:
-    #Runs "at minute 55 past every hour" (see https://crontab.guru)
+    #Runs "every 6 hours"
     - cron: '0 */6 * * *'
 jobs:
   test:
@@ -21,7 +21,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npx playwright test earnin.spec.ts --project=safari
+      run: npx playwright test earnin.spec.ts --project=safari --headed
     - if: failure()
       run: npx playwright test earnin.spec.ts --project=safari --update-snapshots  
     
