@@ -22,8 +22,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test earnin.spec.ts --project=safari
-    - if: failure()
-      run: npx playwright test earnin.spec.ts --project=safari --update-snapshots  
+      - if: failure()
+        run: npx playwright test earnin.spec.ts --project=safari --update-snapshots  
     
     - uses: actions/upload-artifact@v3
       if: always()
