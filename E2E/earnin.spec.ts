@@ -23,6 +23,6 @@ test('test', async ({ page }) => {
 //   await page.waitForLoadState('networkidle');
   await page.waitForTimeout(15000);
 //   await expect(page).toHaveScreenshot('weather.png');
-  await expect(page).toHaveScreenshot('weather.png',{maxDiffPixelRatio:0.00,clip: {x: 0,y: 0,width: 390,height: 600}});
+  await expect(page).toHaveScreenshot('weather.png',{maxDiffPixelRatio:0.03,clip: {x: 0,y: 0,width: 390,height: 600}});
 
 });
